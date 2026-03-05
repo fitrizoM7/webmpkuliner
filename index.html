@@ -19,8 +19,29 @@
     <div class="grid md:grid-cols-4 gap-8">
 
         <!-- NAVIGATION -->
-        <nav>
-        </nav>
+        <nav class="bg-white p-6 rounded-xl shadow">
+    <h3 class="text-orange-900 font-bold text-xl mb-4 uppercase">KATEGORI</h3>
+
+    <ul class="font-medium text-orange-800">
+        <li onclick="gantiKonten('tradisional')" class="p-3 hover:bg-amber-100 rounded-lg cursor-pointer transition active:scale-95">
+            🍲 Makanan Tradisional
+        </li>
+
+        <li onclick="gantiKonten('street')" class="p-3 hover:bg-amber-100 rounded-lg cursor-pointer transition active:scale-95">
+            🍢 Street Food
+        </li>
+
+        <li onclick="gantiKonten('minuman')" class="p-3 hover:bg-amber-100 rounded-lg cursor-pointer transition active:scale-95">
+            🍹 Minuman
+        </li>
+
+        <li onclick="gantiKonten('dessert')" class="p-3 hover:bg-amber-100 rounded-lg cursor-pointer transition active:scale-95">
+            🍰 Dessert
+        </li>
+    </ul>
+
+    <img id="nav-img" src="liwet.jpg" class="w-full h-52 object-cover rounded-lg mt-4">
+</nav>
 
         <!-- MAIN -->
         <main>
