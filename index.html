@@ -44,7 +44,47 @@
         </footer>
         
         <script>
-            
+          $(function(){
+    const gambar=["liwet.jpg","sate.jpg","escampur.jpg"];
+    let i=0;
+    setInterval(function(){
+      i=(i+1)%gambar.length;
+      $("#nav-img").fadeOut(200,function(){
+        $(this).attr("src",gambar[i]).fadeIn(200);
+      });
+    },4000);
+  });
+
+  function gantiKonten(kategori){
+    if(kategori==="tradisional"){
+      judulUtama.innerText="Nasi Liwet";
+      subJudul.innerText="Harum santan & rempah";
+      deskripsi.innerText="Nasi liwet adalah hidangan nasi khas Indonesia yang dimasak dengan santan.";
+      gambarUtama.src="liwet.jpg";
+
+}
+
+    else if(kategori==="street"){
+      judulUtama.innerText="Sate Madura";
+      subJudul.innerText="Bumbu kacang";
+      deskripsi.innerText="Sate ayam khas Madura dengan bumbu kacang gurih.";
+      gambarUtama.src="sate.jpg";
+}
+
+    else if(kategori==="minuman"){
+      judulUtama.innerText="Es Campur";
+      subJudul.innerText="Segar manis";
+      deskripsi.innerText="Minuman es khas Indonesia dengan berbagai campuran.";
+      gambarUtama.src="escampur.jpg";
+}
+
+    else if(kategori==="dessert"){
+      judulUtama.innerText="Klepon";
+      subJudul.innerText="Manis gula merah";
+      deskripsi.innerText="Kue tradisional tepung ketan berisi gula merah.";
+      gambarUtama.src="klepon.jpg";
+    }
+  }    
         </script>
     </body>
 </html>
