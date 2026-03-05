@@ -37,8 +37,17 @@
             </nav>
             
             <!-- MAIN -->  
-            <main class="bg-white rounded p-2 col-span-3"> 
-            </main>  
+            <main class="bg-white rounded p-2 col-span-3">
+  <img id="gambarUtama" src="liwet.jpg" class="w-full max-h-60 object-cover rounded mb-2">  <h2 id="judulUtama" class="text-xs font-bold">
+    Nasi Liwet
+  </h2>  <p id="subJudul" class="text-[9px] text-orange-600 mb-1">
+    Harum santan & rempah
+  </p>  <p id="deskripsi" class="text-[9px]">
+    Nasi liwet adalah hidangan nasi khas Indonesia yang dimasak
+    dengan santan, kaldu ayam, dan rempah sehingga rasanya gurih
+    dan aromatik.
+  </p>
+            </main>
             
             <!-- SIDEBAR -->  
             <aside class="bg-white rounded p-2 text-center col-span-1">  
@@ -51,7 +60,47 @@
         </footer>
         
         <script>
-            
+          $(function(){
+    const gambar=["liwet.jpg","sate.jpg","escampur.jpg"];
+    let i=0;
+    setInterval(function(){
+      i=(i+1)%gambar.length;
+      $("#nav-img").fadeOut(200,function(){
+        $(this).attr("src",gambar[i]).fadeIn(200);
+      });
+    },4000);
+  });
+
+  function gantiKonten(kategori){
+    if(kategori==="tradisional"){
+      judulUtama.innerText="Nasi Liwet";
+      subJudul.innerText="Harum santan & rempah";
+      deskripsi.innerText="Nasi liwet adalah hidangan nasi khas Indonesia yang dimasak dengan santan.";
+      gambarUtama.src="liwet.jpg";
+
+}
+
+    else if(kategori==="street"){
+      judulUtama.innerText="Sate Madura";
+      subJudul.innerText="Bumbu kacang";
+      deskripsi.innerText="Sate ayam khas Madura dengan bumbu kacang gurih.";
+      gambarUtama.src="sate.jpg";
+}
+
+    else if(kategori==="minuman"){
+      judulUtama.innerText="Es Campur";
+      subJudul.innerText="Segar manis";
+      deskripsi.innerText="Minuman es khas Indonesia dengan berbagai campuran.";
+      gambarUtama.src="escampur.jpg";
+}
+
+    else if(kategori==="dessert"){
+      judulUtama.innerText="Klepon";
+      subJudul.innerText="Manis gula merah";
+      deskripsi.innerText="Kue tradisional tepung ketan berisi gula merah.";
+      gambarUtama.src="klepon.jpg";
+    }
+  }    
         </script>
     </body>
 </html>
