@@ -51,7 +51,19 @@
 </nav>
 
         <!-- MAIN -->
-        <main>
+        <main class="md:col-span-2 bg-white p-8 rounded-xl shadow">
+            
+            <img id="gambarUtama" src="liwet.jpg" class="w-full h-64 object-cover rounded-xl mb-6">
+            <h2 id="judulUtama" class="text-2xl font-bold mb-2"> Nasi Liwet
+            </h2>
+            
+            <p id="subJudul" class="text-sm mb-4 text-orange-600"> Harum santan & rempah tradisional
+            </p>
+            
+            <p id="deskripsi">
+                Nasi liwet adalah hidangan nasi khas Indonesia yang dimasak dengan santan, kaldu ayam, dan rempah-rempah
+            </p>
+        
         </main>
 
         <!-- SIDEBAR -->
@@ -66,6 +78,55 @@
 </footer>
 
 <script>
+
+$(function(){
+    const gambar = ["liwet.jpg","sate.jpg","escampur.jpg"];
+    let i = 0;
+
+    setInterval(function(){
+        i = (i + 1) % gambar.length;
+
+        $("#nav-img").fadeOut(300, function(){
+            $(this)
+            .attr("src", gambar[i])
+            .fadeIn(300);
+        });
+
+    }, 4000);
+});
+
+function gantiKonten(kategori){
+
+    if(kategori === "tradisional"){
+    document.getElementById("judulUtama").innerText = "Nasi Liwet";
+        document.getElementById("subJudul").innerText = "Harum santan & rempah tradisional";
+        document.getElementById("deskripsi").innerText = "Nasi liwet adalah hidangan nasi khas Indonesia yang dimasak dengan santan, kaldu ayam, dan rempah-rempah.";
+        document.getElementById("gambarUtama").src = "liwet.jpg";
+    }
+
+    else if(kategori === "street"){
+        document.getElementById("judulUtama").innerText = "Sate Madura";
+        document.getElementById("subJudul").innerText = "Bumbu kacang khas";
+        document.getElementById("deskripsi").innerText = "Sate Madura adalah sate khas dari Pulau Madura dengan bumbu kacang yang gurih.";
+        document.getElementById("gambarUtama").src = "sate.jpg";
+    }
+
+    else if(kategori === "minuman"){
+        document.getElementById("judulUtama").innerText = "Es Campur";
+        document.getElementById("subJudul").innerText = "Segar & manis";
+        document.getElementById("deskripsi").innerText = "Es campur adalah minuman khas Indonesia yang berisi berbagai buah, agar, dan sirup manis.";
+        document.getElementById("gambarUtama").src = "escampur.jpg";
+    }
+
+    else if(kategori === "dessert"){
+        document.getElementById("judulUtama").innerText = "Klepon";
+        document.getElementById("subJudul").innerText = "Manis gula merah";
+        document.getElementById("deskripsi").innerText = "Klepon adalah kue tradisional dari tepung ketan yang diisi gula merah dan dibalut kelapa parut.";
+        document.getElementById("gambarUtama").src = "klepon.jpg";
+    }
+
+}
+
 </script>
 
 </body>
